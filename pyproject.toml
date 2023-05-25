@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "semantic-search"
+version = "0.1.0"
+description = ""
+authors = ["Domenico Vesia <zimling>"]
+readme = "README.md"
+packages = [{include = "semantic_search"}]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+langchain = "^0.0.150"
+autopep8 = "^2.0.2"
+pyyaml = "^6.0"
+ipython = "^8.12.0"
+ipykernel = "^6.22.0"
+pinecone-client = "^2.2.1"  # Add this line to include Pinecone
+huggingface_hub = "^0.14.1" # Add this line to include HugginFaceHub
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

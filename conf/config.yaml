@@ -1,0 +1,57 @@
+loader_type: csv
+splitter_type: recursive_character
+embedder_type: openai
+indexer_type: pinecone
+
+csv_loader_conf:
+  loader_type: csv
+  args: ["data/italian_crime_news.csv"]
+  kwargs:
+
+read_the_docs_loader_conf:
+  loader_type: read_the_docs
+  args: ["../langchain-docs/python.langchain.com/en/latest"]
+  kwargs:
+
+character_splitter_conf:
+  splitter_type: character
+  chunk_size: 1000
+  args: []
+  kwargs:
+
+recursive_character_splitter_conf:
+  splitter_type: recursive_character
+  chunk_size: 1000
+  chunk_overlap: 0
+  separator: ["\n\n", "\n", " ", ""]
+  args: []
+  kwargs:
+
+huggingface_hub_embedder_conf:
+  embedder_type: huggingface_hub
+  repo_id: sentence-transformers/all-MiniLM-L6-v2
+  huggingfacehub_api_token: ${HUGGINGFACEHUB_API_TOKEN}
+  args: [ ]
+  kwargs:
+
+
+openai_embedder_conf:
+  embedder_type: openai
+  openai_api_key: ${OPEANAI_API_KEY}
+  args: [ ]
+  kwargs:
+
+pinecone_conf:
+  indexer_type: pinecone
+  api_key: ${PINECONE_API_KEY}
+  environment: us-east4-gcp
+  index_name: example-index
+  dimension: 1536 #deve corrispondere con la dim embedding
+  args: []
+  kwargs:
+
+chroma_conf:
+  indexer_type: chroma
+  persist_directory: db
+  args: []
+  kwargs:

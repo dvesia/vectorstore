@@ -1,0 +1,2 @@
+from splitters.character import CharacterSplitterConf
+from splitters.recursive_character import RecursiveCharacterSplitterConf
